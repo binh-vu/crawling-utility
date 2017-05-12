@@ -30,7 +30,6 @@ class Pipe(object):
 
 class Pipeline(object):
     def __init__(self):
-        self.logger = logging.getLogger('pipeline')
         self.pipes: List[Pipe] = []
 
     def add_pipe(self, pipe: Pipe) -> None:
@@ -40,13 +39,6 @@ class Pipeline(object):
         data = PipeObject(**kwargs)
 
         for pipe in self.pipes:
-            try:
-                data = pipe.run(data)
-            except ResourceNotAvailable as e:
-                # TODO: fix it here
-                raise
-            except Exception as e:
-                # TODO: logging error here
-                raise
+            data = pipe.run(data)
 
         return data
