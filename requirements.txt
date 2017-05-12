@@ -1,0 +1,6 @@
+nose
+requests
+selenium
+python-slugify
+beautifulsoup4==4.5.3
+git+https://github.com/binh-vu/pyutils.git
