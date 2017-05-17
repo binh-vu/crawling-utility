@@ -6,7 +6,7 @@ from setuptools import find_packages
 
 setup(
     name='crawling_utility',
-    version='0.0.1',
+    version='0.0.2',
     description='Utilities for crawling websites',
     author='Binh Vu',
     author_email='binhlvu@gmail.com',

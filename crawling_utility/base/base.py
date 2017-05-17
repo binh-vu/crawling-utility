@@ -27,6 +27,9 @@ class Pipe(object):
     def run(self, event: PipeObject) -> PipeObject:
         pass
 
+    def close(self) -> None:
+        return None
+
 
 class Pipeline(object):
     def __init__(self):
@@ -42,3 +45,7 @@ class Pipeline(object):
             data = pipe.run(data)
 
         return data
+
+    def close(self):
+        for pipe in self.pipes:
+            pipe.close()
