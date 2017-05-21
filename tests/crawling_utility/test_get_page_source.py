@@ -1,18 +1,17 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import subprocess
-import uuid
-from typing import Dict, Tuple, List, Union, Optional
-
 import time
+import uuid
+
 from nose.tools import eq_
-from selenium.webdriver.remote.webdriver import WebDriver
 
 from crawling_utility.base import Pipeline
 from crawling_utility.pipeline import LoadPage, ChromeDriver, GetPageSource
 
 http_server = None
 html_file = None
+
 
 def setup():
     """Start the testing environment, including: a local python webserver and selenium hub in docker"""
@@ -55,4 +54,3 @@ def test_get_page_source():
         <h1 id="greeting">Hello world</h1>
     
 </body></html>''')
-

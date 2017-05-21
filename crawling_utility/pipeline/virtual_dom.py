@@ -7,7 +7,7 @@ from crawling_utility.base import Pipe
 
 
 class VirtualDOM(Pipe):
-    def __init__(self):
+    def __init__(self) -> None:
         super(VirtualDOM, self).__init__()
 
     def read_from_file(self, file_path: str) -> str:

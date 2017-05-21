@@ -1,10 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import abc
-import logging
 from typing import Any, List
-
-from .exception import ResourceNotAvailable
 
 
 class PipeObject(object):
@@ -22,7 +19,6 @@ class PipeObject(object):
 
 
 class Pipe(object):
-
     @abc.abstractmethod
     def run(self, event: PipeObject) -> PipeObject:
         pass
@@ -32,7 +28,7 @@ class Pipe(object):
 
 
 class Pipeline(object):
-    def __init__(self):
+    def __init__(self) -> None:
         self.pipes: List[Pipe] = []
 
     def add_pipe(self, pipe: Pipe) -> None:

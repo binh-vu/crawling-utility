@@ -30,7 +30,7 @@ intercepter = '''
 
 class AjaxIntercepter(Pipe):
 
-    def __init__(self, load_every_time: bool):
+    def __init__(self, load_every_time: bool) -> None:
         """
         :param load_every_time: load the intercepter script every time (using when loading new page)
         """

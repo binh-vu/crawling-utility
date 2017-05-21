@@ -8,7 +8,7 @@ from crawling_utility.base import Pipe, PipeObject
 
 
 class RemoteChromeDriver(Pipe):
-    def __init__(self, proxy: str = None):
+    def __init__(self, proxy: str = None) -> None:
         """
         :param proxy: "protocol://host:port" e.g: socks5://localhost:8080 
         """
