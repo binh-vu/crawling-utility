@@ -20,5 +20,5 @@ class VirtualDOM(Pipe):
         else:
             html = self.read_from_file(data.file_path)
 
-        data._: BeautifulSoup = BeautifulSoup(html, 'html.parser')
+        data.dom: BeautifulSoup = BeautifulSoup(html, 'html.parser')
         return data

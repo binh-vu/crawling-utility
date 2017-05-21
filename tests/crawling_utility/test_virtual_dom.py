@@ -50,5 +50,5 @@ def test_virtual_dom():
     pipeline.add_pipe(VirtualDOM())
 
     data = pipeline.run(url=f'http://localhost:8000/{html_file}.html')
-    _: BeautifulSoup = data._
-    eq_(_.select_one('h1').text, 'Hello world')
+    dom: BeautifulSoup = data.dom
+    eq_(dom.select_one('h1').text, 'Hello world')
