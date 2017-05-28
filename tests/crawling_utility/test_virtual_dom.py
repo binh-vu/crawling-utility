@@ -16,6 +16,8 @@ http_server = None
 html_file = None
 
 
+# %%
+
 def setup():
     """Start the testing environment, including: a local python webserver and selenium hub in docker"""
     global http_server, html_file

@@ -26,6 +26,7 @@ class RemoteChromeDriver(Pipe):
         assert self.driver is None
         self.driver = webdriver.Remote('http://localhost:4444/wd/hub',
                                        desired_capabilities=self.chrome_options.to_capabilities())
+        return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.driver.close()
