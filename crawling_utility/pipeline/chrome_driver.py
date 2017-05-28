@@ -25,6 +25,7 @@ class ChromeDriver(Pipe):
     def __enter__(self):
         assert self.driver is None
         self.driver = webdriver.Chrome(chrome_options=self.chrome_options)
+        return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.driver.close()

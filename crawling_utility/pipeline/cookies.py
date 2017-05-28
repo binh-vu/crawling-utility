@@ -18,8 +18,9 @@ class SaveCookies(Pipe):
     def run(self, data: PipeObject) -> PipeObject:
         assert 'driver' in data, 'Need selenium driver'
 
-        with open(os.path.join(self.save_dir, f'cookies_{self.cookie_name}'), 'w') as f:
+        with open(os.path.join(self.save_dir, f'cookies_{self.cookie_name}'), 'wb') as f:
             pickle.dump(data.driver.get_cookies(), f)
+
         return data
 
 
@@ -32,7 +33,7 @@ class LoadCookies(Pipe):
         assert os.path.exists(self.save_dir), '%s doesn\'t exist' % self.save_dir
 
     def run(self, data: PipeObject) -> PipeObject:
-        with open(os.path.join(self.save_dir, f'cookies_{self.cookie_name}'), 'w') as f:
+        with open(os.path.join(self.save_dir, f'cookies_{self.cookie_name}'), 'rb') as f:
             cookies = pickle.load(f)
 
         for cookie in cookies:
